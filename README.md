@@ -2,7 +2,7 @@
 
 This little project is to run your own OpenAI assistant right in your Slack. 
 
-![image](https://user-images.githubusercontent.com/1134251/221939383-10f3f638-099c-40b4-a562-1c2c90aec7a8.png)
+![image](https://user-images.githubusercontent.com/1134251/221939639-e9523dda-c2fc-4f9f-924a-947e92a4fcca.png)
 
 Git Repo: <https://github.com/maktouch/slack-chatgpt>
 
