@@ -1,0 +1,23 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": false,
+      "dynamicImport": false
+    },
+    "transform": null,
+    "target": "es2022",
+    "loose": false,
+    "externalHelpers": false,
+    "keepClassNames": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/package.json": ["./package.json"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}
