@@ -1,1 +1,1 @@
-docker buildx build --platform linux/amd64 -t maktouch/slack-chatgpt:latest . --push
+docker buildx build --platform linux/amd64 -t maktouch/slack-chatgpt:latest . --push 

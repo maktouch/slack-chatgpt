@@ -5,7 +5,7 @@ export const db = Knex({
   client: "mysql2",
   connection: {
     ...config.mysql,
-    charset: "utf8",
+    charset: "utf8mb4",
     ssl: {
       rejectUnauthorized: true,
     },
