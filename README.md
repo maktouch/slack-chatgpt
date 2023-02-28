@@ -11,7 +11,6 @@ Dockerhub: <https://hub.docker.com/r/maktouch/slack-chatgpt>
 ## Requirements 
 
 - OpenAI API Key
-- MySQL (I just use Planetscale)
 - Slack App with the following:
   - OAuth scopes:
     - app_mentions:read
@@ -27,6 +26,21 @@ Dockerhub: <https://hub.docker.com/r/maktouch/slack-chatgpt>
     - message.groups
     - message.im
     - message.mpim
+- MySQL (I just use Planetscale)
+  - A table called "prompts" with the schema below
+```
+CREATE TABLE `prompts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ts` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `dialog` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `from` varchar(20) DEFAULT NULL,
+  `channel` varchar(20) DEFAULT NULL,
+  `team` varchar(20) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `prompts_ts_idx` (`ts`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
 
 ## Installation
 
