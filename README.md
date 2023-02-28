@@ -46,9 +46,9 @@ The available env configurations are
 | PORT | The port that Slack Bolt will use | no | 3120
 | OPENAI_API_KEY | The OpenAI API Key | yes | -
 | OPENAI_MODEL | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | text-davinci-003
-| OPENAI_TEMPERATURE | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | -
-| OPENAI_MAX_TOKEN | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no |**** -
-| OPENAI_TOP_P | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | -
-| OPENAI_FREQUENCY_PENALTY | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | -
-| OPENAI_PRESENCE_PENALTY | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | -
+| OPENAI_TEMPERATURE | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | 0.9
+| OPENAI_MAX_TOKEN | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | 150
+| OPENAI_TOP_P | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | 1
+| OPENAI_FREQUENCY_PENALTY | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | 0
+| OPENAI_PRESENCE_PENALTY | [Docs](https://platform.openai.com/docs/api-reference/completions/create#completions/create-model) | no | 0.6
 | OPENAI_AI_SETUP | The initial text that will be prepended before being sent to ChatGPT | no | The following is a conversation with an AI assistant on Slack. The assistant is helpful, creative, clever, very friendly, and always wraps code with backticks.
