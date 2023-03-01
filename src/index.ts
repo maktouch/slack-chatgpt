@@ -68,6 +68,38 @@ async function main() {
 
     return;
   });
+
+  await bolt.event("message", async ({ event, say }) => {
+    // ignore message that are not direct messages
+    if (event.channel_type !== "im") {
+      return;
+    }
+
+    // remove the mention from the text
+    // @ts-expect-error: bolt typing really sucks
+    const prompt = event.text.replace(/<@.+>/, "");
+
+    // this is the thread id. if there's not thread, use the current message as future thread.
+    // this is to keep the context of the conversation
+    // @ts-expect-error: bolt typing really sucks
+    const ts = event.thread_ts || event.ts;
+
+    const text = await ask(prompt, ts, {
+      // @ts-expect-error: bolt typing really sucks
+      from: event.user,
+      channel: event.channel,
+      // @ts-expect-error: bolt typing really sucks
+      team: event.team,
+    });
+
+    await say({
+      thread_ts: event.ts,
+      channel: event.channel,
+      text,
+    });
+
+    return;
+  });
 }
 
 main();
