@@ -11,21 +11,40 @@ Dockerhub: <https://hub.docker.com/r/maktouch/slack-chatgpt>
 ## Requirements 
 
 - OpenAI API Key
-- Slack App with the following:
-  - OAuth scopes:
-    - app_mentions:read
-    - channels:history
-    - channels:read
-    - chat:write
-    - groups:history
-    - im:history
-    - mpim:history
-  - Events subscriptions:
-    - app_mention
-    - message.channels
-    - message.groups
-    - message.im
-    - message.mpim
+- Slack App with the following App Manifest
+```
+  display_information:
+    name: ChatGPT
+    description: ChatGPT Bot
+    background_color: "#10a37f"
+  features:
+    bot_user:
+      display_name: ChatGPT
+      always_online: true
+  oauth_config:
+    scopes:
+      bot:
+        - app_mentions:read
+        - channels:history
+        - channels:read
+        - chat:write
+        - groups:history
+        - im:history
+        - mpim:history
+  settings:
+    event_subscriptions:
+      bot_events:
+        - app_mention
+        - message.channels
+        - message.groups
+        - message.im
+        - message.mpim
+    interactivity:
+      is_enabled: true
+    org_deploy_enabled: false
+    socket_mode_enabled: true
+    token_rotation_enabled: false
+```
 - MySQL (I just use Planetscale)
   - A table called "prompts" with the schema below
 ```
